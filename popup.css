@@ -1,0 +1,131 @@
+/* popup.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: rgba(10, 10, 10, 0.85);
+  color: #e0e0e0;
+  width: 350px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.search-bar input[type="text"] {
+  flex: 2;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.search-bar input[type="number"] {
+  width: 70px;
+  padding: 8px 6px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.search-bar button {
+  flex: 1;
+  background: linear-gradient(135deg, #00bfa5, #7c4dff);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-bar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,191,165,0.4);
+}
+
+.results {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-card {
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.job-card:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.job-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0ff;
+  text-decoration: none;
+}
+
+.job-company, .job-date {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+}
+
+.load-more {
+  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff8a65, #ff5252);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.load-more:hover {
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnlineJobs.ph Scraper</title>
+  <link rel="stylesheet" href="popup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Job Scraper</h1>
+    <div class="search-bar">
+      <input type="text" id="keyword" placeholder="e.g., AI Engineer" />
+      <input type="number" id="delay" min="0" placeholder="Delay (ms)" value="500" />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div id="results" class="results"></div>
+    <button id="loadMoreBtn" class="load-more hidden">Load More</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

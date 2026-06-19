@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "OnlineJobs.ph Job Scraper",
+  "description": "Scrape latest job postings from OnlineJobs.ph based on a keyword.",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.onlinejobs.ph/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
