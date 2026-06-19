@@ -10,14 +10,19 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     var page = request.page || 1;
     var delayMs = request.delayMs || 0;
 
-    // The real search URL uses an offset (0, 30, 60, 90...)
-    // Page 1 = offset 0, Page 2 = offset 30, etc.
+    // Correct keyword search URL:
+    //   Page 1: /jobseekers/jobsearch?jobkeyword=KEYWORD
+    //   Page 2: /jobseekers/jobsearch/30?jobkeyword=KEYWORD
+    //   Page 3: /jobseekers/jobsearch/60?jobkeyword=KEYWORD
     var offset = (page - 1) * 30;
-    var url =
-      "https://www.onlinejobs.ph/jobseekers/search/c/" +
-      encodeURIComponent(keyword) +
-      "/" +
-      offset;
+    var url;
+    if (offset === 0) {
+      url = "https://www.onlinejobs.ph/jobseekers/jobsearch?jobkeyword=" +
+        encodeURIComponent(keyword);
+    } else {
+      url = "https://www.onlinejobs.ph/jobseekers/jobsearch/" + offset +
+        "?jobkeyword=" + encodeURIComponent(keyword);
+    }
 
     setTimeout(function () {
       fetch(url)
